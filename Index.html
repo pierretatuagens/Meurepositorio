@@ -36,7 +36,6 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       background-color: #222;
     }
 
@@ -44,13 +43,14 @@
       background: none;
       border: none;
       color: #eee;
-      padding: 18px 25px;
-      font-size: 18px;
+      padding: 20px;
+      font-size: 20px;
       cursor: pointer;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
-      flex-grow: 1;
-      min-width: 120px;
+      width: 50%;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
     }
 
     nav button:hover,
@@ -156,13 +156,17 @@
     }
 
     @media (max-width: 480px) {
-      nav button {
-        font-size: 16px;
-        padding: 14px 10px;
-      }
-
       .titulo {
         font-size: 40px;
+      }
+
+      nav button {
+        font-size: 18px;
+        padding: 16px;
+      }
+
+      .item p {
+        font-size: 14px;
       }
     }
   </style>
@@ -192,7 +196,7 @@
         <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)">
         <p>Máscara Hannya – versão grande, ombro fechado</p>
       </div>
-      <!-- Adicione mais itens conforme quiser -->
+      <!-- Adicione mais desenhos -->
     </div>
   </div>
 
