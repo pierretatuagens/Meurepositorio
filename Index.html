@@ -11,6 +11,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Libre Baskerville', serif;
+      font-size: 17px;
     }
 
     header {
@@ -20,13 +21,13 @@
 
     .titulo {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
+      font-size: 54px;
       letter-spacing: 2px;
       margin: 0;
     }
 
     .subtitulo {
-      font-size: 18px;
+      font-size: 20px;
       font-style: italic;
       color: #bbb;
       margin-top: 5px;
@@ -44,7 +45,7 @@
       border: none;
       color: #eee;
       padding: 15px 20px;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
@@ -57,7 +58,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
       padding: 20px;
     }
@@ -73,11 +74,12 @@
     .item img {
       max-width: 100%;
       border-radius: 8px;
+      cursor: pointer;
     }
 
     .item p {
       margin-top: 10px;
-      font-size: 14px;
+      font-size: 16px;
       color: #ccc;
     }
 
@@ -106,11 +108,58 @@
       color: #7ed957;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .contato a:hover {
       text-decoration: underline;
+    }
+
+    /* Modal da imagem */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .titulo {
+        font-size: 40px;
+      }
+
+      nav button {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      .item p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -128,58 +177,58 @@
     <button class="tab-button" onclick="showTab('contato')">Contato</button>
   </nav>
 
-  <!-- Aba: Desenhos Disponíveis -->
+  <!-- Abas -->
   <div id="disponiveis" class="content-section active">
     <div class="grid">
       <div class="item">
-        <img src="desenho1.jpg" alt="Desenho 1">
+        <img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this.src)">
         <p>Águia tradicional – disponível no braço</p>
       </div>
       <div class="item">
-        <img src="desenho2.jpg" alt="Desenho 2">
+        <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)">
         <p>Máscara Hannya – versão grande, ombro fechado</p>
       </div>
-      <!-- Adicione mais desenhos -->
     </div>
   </div>
 
-  <!-- Aba: Tatuagens Feitas -->
   <div id="feitas" class="content-section">
     <div class="grid">
       <div class="item">
-        <img src="tatuagem1.jpg" alt="Tatuagem feita 1">
+        <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)">
         <p>Costas com máscara oni pontilhada</p>
       </div>
       <div class="item">
-        <img src="tatuagem2.jpg" alt="Tatuagem feita 2">
+        <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)">
         <p>Fechamento de braço com flores e águia</p>
       </div>
-      <!-- Adicione mais tatuagens -->
     </div>
   </div>
 
-  <!-- Aba: Ambiente Estúdio -->
   <div id="ambiente" class="content-section">
     <div class="grid">
       <div class="item">
-        <img src="ambiente1.jpg" alt="Ambiente 1">
+        <img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)">
         <p>Área de atendimento com luz suave</p>
       </div>
       <div class="item">
-        <img src="ambiente2.jpg" alt="Ambiente 2">
+        <img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)">
         <p>Detalhe do estúdio e materiais organizados</p>
       </div>
-      <!-- Adicione mais fotos do ambiente -->
     </div>
   </div>
 
-  <!-- Aba: Contato -->
   <div id="contato" class="content-section">
     <div class="contato">
       <img src="meuinsta.jpg" alt="Print do Instagram">
       <a href="https://instagram.com/seuusuario" target="_blank">👉 Me siga no Instagram</a>
       <a href="https://wa.me/55SEUNUMERO" target="_blank">📲 Falar no WhatsApp</a>
     </div>
+  </div>
+
+  <!-- Modal de imagem -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
   </div>
 
   <script>
@@ -192,6 +241,15 @@
 
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active');
+    }
+
+    function openModal(src) {
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById("modalImg").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
     }
   </script>
 
