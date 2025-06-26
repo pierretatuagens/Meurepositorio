@@ -58,9 +58,15 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
       padding: 20px;
+    }
+
+    @media (min-width: 700px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
     }
 
     .item {
@@ -195,7 +201,7 @@
     <div class="grid">
       <div class="item">
         <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)">
-        <p>Lua e sol na mão com estrelas nos dedos</p>
+        <p>Costas com máscara oni pontilhada</p>
       </div>
       <div class="item">
         <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)">
