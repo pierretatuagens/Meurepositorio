@@ -65,6 +65,16 @@
       padding: 20px;
     }
 
+    /* Para Pinturas e EcoBags, uma coluna só */
+    .grid-single {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
     .item {
       background-color: #222;
       padding: 15px;
@@ -180,6 +190,7 @@
       font-size: 40px;
       font-weight: bold;
       cursor: pointer;
+      user-select: none;
     }
 
     #backToTopBtn {
@@ -288,31 +299,54 @@
     <button class="tab-button active" onclick="showTab('disponiveis', event)">Desenhos Disponíveis</button>
     <button class="tab-button" onclick="showTab('feitas', event)">Tatuagens Feitas</button>
     <button class="tab-button" onclick="showTab('ambiente', event)">Ambiente Estúdio</button>
+    <button class="tab-button" onclick="showTab('pinturas', event)">Pinturas</button>
+    <button class="tab-button" onclick="showTab('ecobags', event)">EcoBags</button>
     <button class="tab-button" onclick="showTab('contato', event)">Contato</button>
   </nav>
 
+  <!-- Desenhos Disponíveis - 15 imagens -->
   <div id="disponiveis" class="content-section active">
     <div class="grid">
-      <div class="item">
-        <img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this.src)" />
-        <p>Ampulheta</p>
-      </div>
-      <div class="item">
-        <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)" />
-        <p>Andorinha</p>
-      </div>
+      <div class="item"><img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho3.jpg" alt="Desenho 3" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho4.jpg" alt="Desenho 4" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho5.jpg" alt="Desenho 5" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho6.jpg" alt="Desenho 6" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho7.jpg" alt="Desenho 7" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho8.jpg" alt="Desenho 8" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho9.jpg" alt="Desenho 9" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho10.jpg" alt="Desenho 10" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho11.jpg" alt="Desenho 11" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho12.jpg" alt="Desenho 12" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho13.jpg" alt="Desenho 13" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho14.jpg" alt="Desenho 14" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="desenho15.jpg" alt="Desenho 15" onclick="openModal(this.src)" /></div>
     </div>
   </div>
 
+  <!-- Tatuagens Feitas - 15 imagens -->
   <div id="feitas" class="content-section">
     <div class="grid">
       <div class="item"><img src="tatuagem1.jpg" alt="Tatuagem 1" onclick="openModal(this.src)" /></div>
       <div class="item"><img src="tatuagem2.jpg" alt="Tatuagem 2" onclick="openModal(this.src)" /></div>
       <div class="item"><img src="tatuagem3.jpg" alt="Tatuagem 3" onclick="openModal(this.src)" /></div>
       <div class="item"><img src="tatuagem4.jpg" alt="Tatuagem 4" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem5.jpg" alt="Tatuagem 5" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem6.jpg" alt="Tatuagem 6" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem7.jpg" alt="Tatuagem 7" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem8.jpg" alt="Tatuagem 8" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem9.jpg" alt="Tatuagem 9" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem10.jpg" alt="Tatuagem 10" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem11.jpg" alt="Tatuagem 11" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem12.jpg" alt="Tatuagem 12" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem13.jpg" alt="Tatuagem 13" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem14.jpg" alt="Tatuagem 14" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem15.jpg" alt="Tatuagem 15" onclick="openModal(this.src)" /></div>
     </div>
   </div>
 
+  <!-- Ambiente Estúdio -->
   <div id="ambiente" class="content-section">
     <div class="grid">
       <div class="item"><img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)" /></div>
@@ -321,16 +355,31 @@
     </div>
   </div>
 
+  <!-- Pinturas - só 1 imagem por enquanto -->
+  <div id="pinturas" class="content-section">
+    <div class="grid-single">
+      <div class="item"><img src="pintura1.jpg" alt="Pintura 1" onclick="openModal(this.src)" /></div>
+    </div>
+  </div>
+
+  <!-- EcoBags - só 1 imagem por enquanto -->
+  <div id="ecobags" class="content-section">
+    <div class="grid-single">
+      <div class="item"><img src="eco1.jpg" alt="EcoBag 1" onclick="openModal(this.src)" /></div>
+    </div>
+  </div>
+
+  <!-- Contato -->
   <div id="contato" class="content-section">
     <div class="contato">
       <img src="meuinsta.jpg" alt="Print do Instagram" />
-      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank">
+      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank" rel="noopener noreferrer">
         <div class="botao-conteudo">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
           <span class="botao-texto">Me siga no Instagram</span>
         </div>
       </a>
-      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank">
+      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank" rel="noopener noreferrer">
         <div class="botao-conteudo">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
           <span class="botao-texto">Falar no WhatsApp</span>
@@ -339,13 +388,16 @@
     </div>
   </div>
 
+  <!-- Modal -->
   <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg" />
   </div>
 
+  <!-- Botão Voltar -->
   <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
 
+  <!-- Botão WhatsApp Flutuante -->
   <a href="https://wa.me/5551980383195" target="_blank" id="whatsappBtn" aria-label="WhatsApp" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
   </a>
@@ -356,10 +408,10 @@
 
     function showTab(id, event) {
       const sections = document.querySelectorAll('.content-section');
-      const buttons = document.querySelectorAll('.tab-button');
+      const buttons = document.querySelectorAll('nav button');
 
-      sections.forEach((section) => section.classList.remove('active'));
-      buttons.forEach((button) => button.classList.remove('active'));
+      sections.forEach(section => section.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
 
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active');
@@ -367,58 +419,11 @@
 
     function openModal(src) {
       const abaAtiva = document.querySelector('.content-section.active');
-      imagensDaAba = Array.from(abaAtiva.querySelectorAll('img'));
-      indexAtual = imagensDaAba.findIndex((img) => img.src === src);
+      imagensDaAba = Array.from(abaAtiva.querySelectorAll('img')).map(img => img.src);
+      indexAtual = imagensDaAba.indexOf(src);
+      if (indexAtual === -1) indexAtual = 0;
 
       const modal = document.getElementById('myModal');
       const modalImg = document.getElementById('modalImg');
+
       modal.style.display = 'block';
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-      document.getElementById('myModal').style.display = 'none';
-    }
-
-    function trocarImagem(direcao) {
-      if (imagensDaAba.length === 0) return;
-      indexAtual += direcao;
-      if (indexAtual < 0) indexAtual = imagensDaAba.length - 1;
-      if (indexAtual >= imagensDaAba.length) indexAtual = 0;
-      document.getElementById('modalImg').src = imagensDaAba[indexAtual].src;
-    }
-
-    let toqueInicialX = null;
-    document.getElementById('myModal').addEventListener('touchstart', (e) => {
-      toqueInicialX = e.touches[0].clientX;
-    });
-
-    document.getElementById('myModal').addEventListener('touchend', (e) => {
-      if (toqueInicialX === null) return;
-      let toqueFinalX = e.changedTouches[0].clientX;
-      let diferenca = toqueInicialX - toqueFinalX;
-
-      if (Math.abs(diferenca) > 50) {
-        if (diferenca > 0) trocarImagem(1);
-        else trocarImagem(-1);
-      }
-      toqueInicialX = null;
-    });
-
-    document.getElementById('myModal').addEventListener('click', (e) => {
-      const largura = document.getElementById('myModal').offsetWidth;
-      if (e.clientX < largura * 0.3) trocarImagem(-1);
-      else if (e.clientX > largura * 0.7) trocarImagem(1);
-      else closeModal();
-    });
-
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    window.onscroll = function () {
-      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-    };
-    backToTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
-</html>
