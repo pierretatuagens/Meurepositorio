@@ -95,18 +95,20 @@
 
     .contato {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     .contato img {
-      max-width: 300px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      width: 95%;
+      max-width: 800px;
+      border-radius: 12px;
+      margin: 0 auto 40px auto;
+      display: block;
     }
 
     .contato a.botao-link {
       display: inline-block;
-      margin: 20px 10px;
+      margin: 20px auto;
       padding: 20px 30px;
       background-color: #fff;
       color: #111;
@@ -116,6 +118,8 @@
       border-radius: 12px;
       letter-spacing: 1px;
       transition: 0.3s;
+      width: 90%;
+      max-width: 500px;
     }
 
     .contato a.botao-link:hover {
@@ -214,12 +218,15 @@
         padding: 16px;
       }
 
+      .contato img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
       .contato a.botao-link {
-        font-size: 32px;
-        display: block;
-        width: 90%;
-        margin: 20px auto;
-        padding: 20px;
+        font-size: 30px;
+        padding: 18px;
+        width: 95%;
       }
     }
   </style>
@@ -289,7 +296,7 @@
   <!-- Botão Voltar -->
   <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
 
-  <!-- Botão WhatsApp -->
+  <!-- Botão WhatsApp Flutuante -->
   <a href="https://wa.me/5551980383195" target="_blank" id="whatsappBtn" aria-label="WhatsApp" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
@@ -318,8 +325,7 @@
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     window.onscroll = function () {
-      backToTopBtn.style.display =
-        window.scrollY > 300 ? 'flex' : 'none';
+      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     };
 
     backToTopBtn.addEventListener('click', function () {
