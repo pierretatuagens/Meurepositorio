@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>PierreTatuagens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet" />
   <style>
     body {
       background-color: #111;
@@ -70,7 +70,7 @@
       padding: 15px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     .item img {
@@ -113,11 +113,11 @@
     .contato a {
       display: block;
       margin: 10px 0;
-      color: #fff; /* Agora branco */
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
       font-size: 20px;
-      font-family: 'Bebas Neue', sans-serif; /* Fonte aplicada */
+      font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
       transition: 0.2s;
     }
@@ -137,7 +137,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.9);
+      background-color: rgba(0, 0, 0, 0.9);
     }
 
     .modal-content {
@@ -158,6 +158,56 @@
       cursor: pointer;
     }
 
+    /* Botão Voltar ao Topo */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      z-index: 1000;
+      font-size: 24px;
+      border: none;
+      outline: none;
+      background-color: #7ed957;
+      color: white;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(126, 217, 87, 0.7);
+      transition: background-color 0.3s;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #65b43b;
+    }
+
+    /* Botão flutuante WhatsApp */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 30px;
+      z-index: 1000;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.7);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe57;
+    }
+
+    #whatsappBtn img {
+      width: 32px;
+      height: 32px;
+    }
+
     @media (max-width: 480px) {
       .titulo {
         font-size: 40px;
@@ -170,6 +220,12 @@
 
       .item p {
         font-size: 14px;
+      }
+
+      .contato a {
+        font-size: 28px;
+        padding: 12px 0;
+        text-align: center;
       }
     }
   </style>
@@ -192,11 +248,11 @@
   <div id="disponiveis" class="content-section active">
     <div class="grid">
       <div class="item">
-        <img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this.src)">
+        <img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this.src)" />
         <p>Ampulheta</p>
       </div>
       <div class="item">
-        <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)">
+        <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)" />
         <p>Andorinha</p>
       </div>
     </div>
@@ -206,16 +262,16 @@
   <div id="feitas" class="content-section">
     <div class="grid">
       <div class="item">
-        <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)">
+        <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)" />
       </div>
       <div class="item">
-        <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)">
+        <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)" />
       </div>
       <div class="item">
-        <img src="tatuagem3.jpg" alt="Tatuagem feita 3" onclick="openModal(this.src)">
+        <img src="tatuagem3.jpg" alt="Tatuagem feita 3" onclick="openModal(this.src)" />
       </div>
       <div class="item">
-        <img src="tatuagem4.jpg" alt="Tatuagem feita 4" onclick="openModal(this.src)">
+        <img src="tatuagem4.jpg" alt="Tatuagem feita 4" onclick="openModal(this.src)" />
       </div>
     </div>
   </div>
@@ -224,13 +280,13 @@
   <div id="ambiente" class="content-section">
     <div class="grid">
       <div class="item">
-        <img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)">
+        <img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)" />
       </div>
       <div class="item">
-        <img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)">
+        <img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)" />
       </div>
       <div class="item">
-        <img src="ambiente3.jpg" alt="Ambiente 3" onclick="openModal(this.src)">
+        <img src="ambiente3.jpg" alt="Ambiente 3" onclick="openModal(this.src)" />
       </div>
     </div>
   </div>
@@ -238,7 +294,7 @@
   <!-- Aba: Contato -->
   <div id="contato" class="content-section">
     <div class="contato">
-      <img src="meuinsta.jpg" alt="Print do Instagram">
+      <img src="meuinsta.jpg" alt="Print do Instagram" />
       <a href="https://instagram.com/pierretatuagens" target="_blank">👉 Me siga no Instagram</a>
       <a href="https://wa.me/5551980383195" target="_blank">📲 Falar no WhatsApp</a>
     </div>
@@ -247,30 +303,58 @@
   <!-- Modal -->
   <div id="myModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg">
+    <img class="modal-content" id="modalImg" />
   </div>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
+
+  <!-- Botão WhatsApp Flutuante -->
+  <a
+    href="https://wa.me/5551980383195"
+    target="_blank"
+    id="whatsappBtn"
+    aria-label="WhatsApp"
+    rel="noopener noreferrer"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
 
   <script>
     function showTab(id, event) {
       const sections = document.querySelectorAll('.content-section');
       const buttons = document.querySelectorAll('.tab-button');
 
-      sections.forEach(section => section.classList.remove('active'));
-      buttons.forEach(button => button.classList.remove('active'));
+      sections.forEach((section) => section.classList.remove('active'));
+      buttons.forEach((button) => button.classList.remove('active'));
 
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active');
     }
 
     function openModal(src) {
-      document.getElementById("myModal").style.display = "block";
-      document.getElementById("modalImg").src = src;
+      document.getElementById('myModal').style.display = 'block';
+      document.getElementById('modalImg').src = src;
     }
 
     function closeModal() {
-      document.getElementById("myModal").style.display = "none";
+      document.getElementById('myModal').style.display = 'none';
     }
-  </script>
 
+    // Mostrar/esconder botão voltar ao topo
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    };
+
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
