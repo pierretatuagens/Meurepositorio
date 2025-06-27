@@ -49,9 +49,14 @@
       cursor: pointer;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
-      width: 50%;
+      width: 33.33%;
       box-sizing: border-box;
       border-bottom: 1px solid #333;
+      border-right: 1px solid #333;
+    }
+    /* Remover borda do último botão de cada linha */
+    nav button:nth-child(3n) {
+      border-right: none;
     }
 
     nav button:hover,
@@ -283,6 +288,8 @@
   <nav>
     <button class="tab-button active" onclick="showTab('disponiveis', event)">Desenhos Disponíveis</button>
     <button class="tab-button" onclick="showTab('feitas', event)">Tatuagens Feitas</button>
+    <button class="tab-button" onclick="showTab('pinturas', event)">Pinturas</button>
+    <button class="tab-button" onclick="showTab('ecobags', event)">EcoBags</button>
     <button class="tab-button" onclick="showTab('ambiente', event)">Ambiente Estúdio</button>
     <button class="tab-button" onclick="showTab('ranking', event)">Ranking</button>
     <button class="tab-button" onclick="showTab('contato', event)">Contato</button>
@@ -291,44 +298,120 @@
   <!-- Desenhos Disponíveis -->
   <div id="disponiveis" class="content-section active">
     <div class="grid">
-      <!-- 15 imagens -->
-      <div class="item"><img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this, 'disponiveis')" /><p>Desenho 1</p></div>
-      <div class="item"><img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this, 'disponiveis')" /><p>Desenho 2</p></div>
-      <div class="item"><img src="desenho3.jpg" alt="Desenho 3" onclick="openModal(this, 'disponiveis')" /><p>Desenho 3</p></div>
-      <div class="item"><img src="desenho4.jpg" alt="Desenho 4" onclick="openModal(this, 'disponiveis')" /><p>Desenho 4</p></div>
-      <div class="item"><img src="desenho5.jpg" alt="Desenho 5" onclick="openModal(this, 'disponiveis')" /><p>Desenho 5</p></div>
-      <div class="item"><img src="desenho6.jpg" alt="Desenho 6" onclick="openModal(this, 'disponiveis')" /><p>Desenho 6</p></div>
-      <div class="item"><img src="desenho7.jpg" alt="Desenho 7" onclick="openModal(this, 'disponiveis')" /><p>Desenho 7</p></div>
-      <div class="item"><img src="desenho8.jpg" alt="Desenho 8" onclick="openModal(this, 'disponiveis')" /><p>Desenho 8</p></div>
-      <div class="item"><img src="desenho9.jpg" alt="Desenho 9" onclick="openModal(this, 'disponiveis')" /><p>Desenho 9</p></div>
-      <div class="item"><img src="desenho10.jpg" alt="Desenho 10" onclick="openModal(this, 'disponiveis')" /><p>Desenho 10</p></div>
-      <div class="item"><img src="desenho11.jpg" alt="Desenho 11" onclick="openModal(this, 'disponiveis')" /><p>Desenho 11</p></div>
-      <div class="item"><img src="desenho12.jpg" alt="Desenho 12" onclick="openModal(this, 'disponiveis')" /><p>Desenho 12</p></div>
-      <div class="item"><img src="desenho13.jpg" alt="Desenho 13" onclick="openModal(this, 'disponiveis')" /><p>Desenho 13</p></div>
-      <div class="item"><img src="desenho14.jpg" alt="Desenho 14" onclick="openModal(this, 'disponiveis')" /><p>Desenho 14</p></div>
-      <div class="item"><img src="desenho15.jpg" alt="Desenho 15" onclick="openModal(this, 'disponiveis')" /><p>Desenho 15</p></div>
+      <!-- 15 imagens para Desenhos Disponíveis -->
+      <div class="item"><img src="desenho1.jpg" alt="Desenho 1" onclick="openModal(this, 'disponiveis')" /><p>Ampulheta</p></div>
+      <div class="item"><img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this, 'disponiveis')" /><p>Andorinha</p></div>
+      <div class="item"><img src="desenho3.jpg" alt="Desenho 3" onclick="openModal(this, 'disponiveis')" /><p>Águia</p></div>
+      <div class="item"><img src="desenho4.jpg" alt="Desenho 4" onclick="openModal(this, 'disponiveis')" /><p>Fênix</p></div>
+      <div class="item"><img src="desenho5.jpg" alt="Desenho 5" onclick="openModal(this, 'disponiveis')" /><p>Rosa</p></div>
+      <div class="item"><img src="desenho6.jpg" alt="Desenho 6" onclick="openModal(this, 'disponiveis')" /><p>Dragão</p></div>
+      <div class="item"><img src="desenho7.jpg" alt="Desenho 7" onclick="openModal(this, 'disponiveis')" /><p>Lobo</p></div>
+      <div class="item"><img src="desenho8.jpg" alt="Desenho 8" onclick="openModal(this, 'disponiveis')" /><p>Tigre</p></div>
+      <div class="item"><img src="desenho9.jpg" alt="Desenho 9" onclick="openModal(this, 'disponiveis')" /><p>Coruja</p></div>
+      <div class="item"><img src="desenho10.jpg" alt="Desenho 10" onclick="openModal(this, 'disponiveis')" /><p>Coruja 2</p></div>
+      <div class="item"><img src="desenho11.jpg" alt="Desenho 11" onclick="openModal(this, 'disponiveis')" /><p>Elefante</p></div>
+      <div class="item"><img src="desenho12.jpg" alt="Desenho 12" onclick="openModal(this, 'disponiveis')" /><p>Falcão</p></div>
+      <div class="item"><img src="desenho13.jpg" alt="Desenho 13" onclick="openModal(this, 'disponiveis')" /><p>Cacto</p></div>
+      <div class="item"><img src="desenho14.jpg" alt="Desenho 14" onclick="openModal(this, 'disponiveis')" /><p>Mandala</p></div>
+      <div class="item"><img src="desenho15.jpg" alt="Desenho 15" onclick="openModal(this, 'disponiveis')" /><p>Flor de Lotus</p></div>
     </div>
   </div>
 
   <!-- Tatuagens Feitas -->
   <div id="feitas" class="content-section">
     <div class="grid">
-      <!-- 15 imagens com botão de coração -->
-      <div class="item"><img src="tatuagem1.jpg" alt="Tatuagem 1" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem1">&#10084;</button><div class="heart-count" id="count-tatuagem1">0 votos</div></div>
-      <div class="item"><img src="tatuagem2.jpg" alt="Tatuagem 2" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem2">&#10084;</button><div class="heart-count" id="count-tatuagem2">0 votos</div></div>
-      <div class="item"><img src="tatuagem3.jpg" alt="Tatuagem 3" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem3">&#10084;</button><div class="heart-count" id="count-tatuagem3">0 votos</div></div>
-      <div class="item"><img src="tatuagem4.jpg" alt="Tatuagem 4" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem4">&#10084;</button><div class="heart-count" id="count-tatuagem4">0 votos</div></div>
-      <div class="item"><img src="tatuagem5.jpg" alt="Tatuagem 5" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem5">&#10084;</button><div class="heart-count" id="count-tatuagem5">0 votos</div></div>
-      <div class="item"><img src="tatuagem6.jpg" alt="Tatuagem 6" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem6">&#10084;</button><div class="heart-count" id="count-tatuagem6">0 votos</div></div>
-      <div class="item"><img src="tatuagem7.jpg" alt="Tatuagem 7" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem7">&#10084;</button><div class="heart-count" id="count-tatuagem7">0 votos</div></div>
-      <div class="item"><img src="tatuagem8.jpg" alt="Tatuagem 8" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem8">&#10084;</button><div class="heart-count" id="count-tatuagem8">0 votos</div></div>
-      <div class="item"><img src="tatuagem9.jpg" alt="Tatuagem 9" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem9">&#10084;</button><div class="heart-count" id="count-tatuagem9">0 votos</div></div>
-      <div class="item"><img src="tatuagem10.jpg" alt="Tatuagem 10" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem10">&#10084;</button><div class="heart-count" id="count-tatuagem10">0 votos</div></div>
-      <div class="item"><img src="tatuagem11.jpg" alt="Tatuagem 11" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem11">&#10084;</button><div class="heart-count" id="count-tatuagem11">0 votos</div></div>
-      <div class="item"><img src="tatuagem12.jpg" alt="Tatuagem 12" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem12">&#10084;</button><div class="heart-count" id="count-tatuagem12">0 votos</div></div>
-      <div class="item"><img src="tatuagem13.jpg" alt="Tatuagem 13" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem13">&#10084;</button><div class="heart-count" id="count-tatuagem13">0 votos</div></div>
-      <div class="item"><img src="tatuagem14.jpg" alt="Tatuagem 14" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem14">&#10084;</button><div class="heart-count" id="count-tatuagem14">0 votos</div></div>
-      <div class="item"><img src="tatuagem15.jpg" alt="Tatuagem 15" onclick="openModal(this, 'feitas')" /><button class="heart-btn" data-id="tatuagem15">&#10084;</button><div class="heart-count" id="count-tatuagem15">0 votos</div></div>
+      <!-- 15 imagens para Tatuagens Feitas -->
+      <div class="item">
+        <img src="tatuagem1.jpg" alt="Tatuagem 1" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem1">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem1">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem2.jpg" alt="Tatuagem 2" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem2">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem2">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem3.jpg" alt="Tatuagem 3" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem3">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem3">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem4.jpg" alt="Tatuagem 4" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem4">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem4">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem5.jpg" alt="Tatuagem 5" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem5">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem5">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem6.jpg" alt="Tatuagem 6" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem6">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem6">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem7.jpg" alt="Tatuagem 7" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem7">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem7">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem8.jpg" alt="Tatuagem 8" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem8">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem8">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem9.jpg" alt="Tatuagem 9" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem9">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem9">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem10.jpg" alt="Tatuagem 10" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem10">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem10">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem11.jpg" alt="Tatuagem 11" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem11">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem11">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem12.jpg" alt="Tatuagem 12" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem12">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem12">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem13.jpg" alt="Tatuagem 13" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem13">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem13">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem14.jpg" alt="Tatuagem 14" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem14">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem14">0 votos</div>
+      </div>
+      <div class="item">
+        <img src="tatuagem15.jpg" alt="Tatuagem 15" onclick="openModal(this, 'feitas')" />
+        <button class="heart-btn" data-id="tatuagem15">&#10084;</button>
+        <div class="heart-count" id="count-tatuagem15">0 votos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pinturas -->
+  <div id="pinturas" class="content-section">
+    <div class="grid">
+      <div class="item"><img src="pintura1.jpg" alt="Pintura 1" onclick="openModal(this, 'pinturas')" /><p>Pintura 1</p></div>
+      <div class="item"><img src="pintura2.jpg" alt="Pintura 2" onclick="openModal(this, 'pinturas')" /><p>Pintura 2</p></div>
+    </div>
+  </div>
+
+  <!-- EcoBags -->
+  <div id="ecobags" class="content-section">
+    <div class="grid">
+      <div class="item"><img src="ecobag1.jpg" alt="EcoBag 1" onclick="openModal(this, 'ecobags')" /><p>EcoBag 1</p></div>
+      <div class="item"><img src="ecobag2.jpg" alt="EcoBag 2" onclick="openModal(this, 'ecobags')" /><p>EcoBag 2</p></div>
     </div>
   </div>
 <!-- Ambiente Estúdio -->
@@ -342,9 +425,7 @@
 
   <!-- Ranking -->
   <div id="ranking" class="content-section">
-    <h2 style="text-align:center; font-family: 'Bebas Neue', sans-serif; font-size: 40px; padding: 20px;">
-      Top 5 Tatuagens Mais Votadas
-    </h2>
+    <h2 style="text-align:center; font-family: 'Bebas Neue', sans-serif; font-size: 40px; padding: 20px;">Top 5 Tatuagens Mais Votadas</h2>
     <ul class="ranking-list" id="rankingList"></ul>
   </div>
 
@@ -352,11 +433,11 @@
   <div id="contato" class="content-section">
     <div class="contato">
       <img src="meuinsta.jpg" alt="Print do Instagram" />
-      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank">
+      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
         <span>Me siga no Instagram</span>
       </a>
-      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank">
+      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
         <span>Falar no WhatsApp</span>
       </a>
@@ -379,32 +460,34 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <script>
-    // Firebase
+    // Config Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyBtAVR-HNCh_g0jS4qDdI-0YZo2uIcrlvc",
       authDomain: "pierretatuagens-15ee8.firebaseapp.com",
       databaseURL: "https://pierretatuagens-15ee8-default-rtdb.firebaseio.com",
       projectId: "pierretatuagens-15ee8",
-      storageBucket: "pierretatuagens-15ee8.appspot.com",
+      storageBucket: "pierretatuagens-15ee8.firebasestorage.app",
       messagingSenderId: "849951139493",
       appId: "1:849951139493:web:31129ad2e251effc1c0f4c"
     };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-    const votosRef = db.ref("votos");
 
-    // Abas
+    // Controle de abas
     function showTab(id, event) {
       const sections = document.querySelectorAll('.content-section');
       const buttons = document.querySelectorAll('.tab-button');
+
       sections.forEach(s => s.classList.remove('active'));
       buttons.forEach(b => b.classList.remove('active'));
+
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active');
+
       if (id === 'ranking') loadRanking();
     }
 
-    // Modal com swipe
+    // Modal e swipe lateral
     let currentTab = '';
     let currentIndex = 0;
     let images = [];
@@ -447,13 +530,16 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Atualiza contagem de votos
+    // Sistema de votos Firebase
+    const votosRef = db.ref("votos");
+
+    // Atualiza contagem na tela
     function atualizarContagem(id, count) {
       const el = document.getElementById(`count-${id}`);
       if (el) el.textContent = `${count} voto${count === 1 ? '' : 's'}`;
     }
 
-    // Carrega votos do Firebase
+    // Carrega votos do Firebase e atualiza contagens
     function carregarVotos() {
       votosRef.on("value", snapshot => {
         const dados = snapshot.val() || {};
@@ -462,9 +548,10 @@
         });
       });
     }
+
     carregarVotos();
 
-    // Clique no coração
+    // Evento clique nos corações para votar
     document.addEventListener("click", e => {
       if (e.target.classList.contains("heart-btn")) {
         const btn = e.target;
@@ -475,7 +562,7 @@
       }
     });
 
-    // Ranking
+    // Carrega e mostra ranking top 5
     function loadRanking() {
       votosRef.once("value").then(snapshot => {
         const votos = snapshot.val() || {};
