@@ -158,40 +158,44 @@
       cursor: pointer;
     }
 
-    /* Botão Voltar ao Topo */
+    /* Botão Voltar ao Topo - canto inferior esquerdo */
     #backToTopBtn {
       display: none;
-      position: fixed;
-      bottom: 80px;
-      right: 30px;
-      z-index: 1000;
-      font-size: 24px;
-      border: none;
-      outline: none;
-      background-color: #7ed957;
-      color: white;
-      cursor: pointer;
-      padding: 12px 18px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(126, 217, 87, 0.7);
-      transition: background-color 0.3s;
-    }
-
-    #backToTopBtn:hover {
-      background-color: #65b43b;
-    }
-
-    /* Botão flutuante WhatsApp */
-    #whatsappBtn {
       position: fixed;
       bottom: 20px;
       left: 30px;
       z-index: 1000;
-      background-color: #25d366;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #111;
+      border: none;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.7);
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background-color 0.3s;
+    }
+
+    #backToTopBtn:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    /* Botão WhatsApp Flutuante - canto inferior direito */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -200,12 +204,12 @@
     }
 
     #whatsappBtn:hover {
-      background-color: #1ebe57;
+      background-color: rgba(255, 255, 255, 1);
     }
 
     #whatsappBtn img {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
     }
 
     @media (max-width: 480px) {
@@ -261,33 +265,19 @@
   <!-- Aba: Tatuagens Feitas -->
   <div id="feitas" class="content-section">
     <div class="grid">
-      <div class="item">
-        <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)" />
-      </div>
-      <div class="item">
-        <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)" />
-      </div>
-      <div class="item">
-        <img src="tatuagem3.jpg" alt="Tatuagem feita 3" onclick="openModal(this.src)" />
-      </div>
-      <div class="item">
-        <img src="tatuagem4.jpg" alt="Tatuagem feita 4" onclick="openModal(this.src)" />
-      </div>
+      <div class="item"><img src="tatuagem1.jpg" alt="Tatuagem 1" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem2.jpg" alt="Tatuagem 2" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem3.jpg" alt="Tatuagem 3" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="tatuagem4.jpg" alt="Tatuagem 4" onclick="openModal(this.src)" /></div>
     </div>
   </div>
 
   <!-- Aba: Ambiente Estúdio -->
   <div id="ambiente" class="content-section">
     <div class="grid">
-      <div class="item">
-        <img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)" />
-      </div>
-      <div class="item">
-        <img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)" />
-      </div>
-      <div class="item">
-        <img src="ambiente3.jpg" alt="Ambiente 3" onclick="openModal(this.src)" />
-      </div>
+      <div class="item"><img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)" /></div>
+      <div class="item"><img src="ambiente3.jpg" alt="Ambiente 3" onclick="openModal(this.src)" /></div>
     </div>
   </div>
 
@@ -306,17 +296,11 @@
     <img class="modal-content" id="modalImg" />
   </div>
 
-  <!-- Botão Voltar ao Topo -->
+  <!-- Botão Voltar -->
   <button id="backToTopBtn" title="Voltar ao topo">&#8679;</button>
 
-  <!-- Botão WhatsApp Flutuante -->
-  <a
-    href="https://wa.me/5551980383195"
-    target="_blank"
-    id="whatsappBtn"
-    aria-label="WhatsApp"
-    rel="noopener noreferrer"
-  >
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5551980383195" target="_blank" id="whatsappBtn" aria-label="WhatsApp" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
@@ -341,15 +325,11 @@
       document.getElementById('myModal').style.display = 'none';
     }
 
-    // Mostrar/esconder botão voltar ao topo
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     window.onscroll = function () {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
+      backToTopBtn.style.display =
+        window.scrollY > 300 ? 'flex' : 'none';
     };
 
     backToTopBtn.addEventListener('click', function () {
