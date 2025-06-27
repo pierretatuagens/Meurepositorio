@@ -107,7 +107,10 @@
     }
 
     .contato a.botao-link {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       margin: 20px auto;
       padding: 20px 30px;
       background-color: #fff;
@@ -124,6 +127,12 @@
 
     .contato a.botao-link:hover {
       background-color: #ddd;
+    }
+
+    .botao-link img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
     }
 
     .modal {
@@ -187,8 +196,8 @@
       bottom: 20px;
       right: 30px;
       z-index: 1000;
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       background-color: rgba(255, 255, 255, 0.85);
       border-radius: 50%;
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -204,8 +213,8 @@
     }
 
     #whatsappBtn img {
-      width: 60px;
-      height: 60px;
+      width: 72px;
+      height: 72px;
     }
 
     @media (max-width: 480px) {
@@ -228,6 +237,21 @@
         padding: 18px;
         width: 95%;
       }
+
+      .botao-link img {
+        height: 28px;
+        width: 28px;
+      }
+
+      #whatsappBtn {
+        width: 130px;
+        height: 130px;
+      }
+
+      #whatsappBtn img {
+        width: 64px;
+        height: 64px;
+      }
     }
   </style>
 </head>
@@ -245,7 +269,7 @@
     <button class="tab-button" onclick="showTab('contato', event)">Contato</button>
   </nav>
 
-  <!-- Aba: Desenhos Disponíveis -->
+  <!-- Desenhos Disponíveis -->
   <div id="disponiveis" class="content-section active">
     <div class="grid">
       <div class="item">
@@ -259,7 +283,7 @@
     </div>
   </div>
 
-  <!-- Aba: Tatuagens Feitas -->
+  <!-- Tatuagens Feitas -->
   <div id="feitas" class="content-section">
     <div class="grid">
       <div class="item"><img src="tatuagem1.jpg" alt="Tatuagem 1" onclick="openModal(this.src)" /></div>
@@ -269,7 +293,7 @@
     </div>
   </div>
 
-  <!-- Aba: Ambiente Estúdio -->
+  <!-- Ambiente Estúdio -->
   <div id="ambiente" class="content-section">
     <div class="grid">
       <div class="item"><img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)" /></div>
@@ -278,12 +302,16 @@
     </div>
   </div>
 
-  <!-- Aba: Contato -->
+  <!-- Contato -->
   <div id="contato" class="content-section">
     <div class="contato">
       <img src="meuinsta.jpg" alt="Print do Instagram" />
-      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank">👉 Me siga no Instagram</a>
-      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank">📲 Falar no WhatsApp</a>
+      <a class="botao-link" href="https://instagram.com/pierretatuagens" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Me siga no Instagram
+      </a>
+      <a class="botao-link" href="https://wa.me/5551980383195" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Falar no WhatsApp
+      </a>
     </div>
   </div>
 
@@ -298,7 +326,7 @@
 
   <!-- Botão WhatsApp Flutuante -->
   <a href="https://wa.me/5551980383195" target="_blank" id="whatsappBtn" aria-label="WhatsApp" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
   </a>
 
   <script>
@@ -323,11 +351,9 @@
     }
 
     const backToTopBtn = document.getElementById('backToTopBtn');
-
     window.onscroll = function () {
       backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     };
-
     backToTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
