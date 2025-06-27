@@ -44,7 +44,7 @@
       border: none;
       color: #eee;
       padding: 20px;
-      font-size: 30px; /* Aumentado para 30px (50% maior) */
+      font-size: 30px;
       cursor: pointer;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
@@ -123,7 +123,6 @@
       text-decoration: underline;
     }
 
-    /* Modal da imagem */
     .modal {
       display: none;
       position: fixed;
@@ -161,7 +160,7 @@
       }
 
       nav button {
-        font-size: 27px; /* Aumentado para 27px (50% maior) */
+        font-size: 27px;
         padding: 16px;
       }
 
@@ -179,10 +178,10 @@
   </header>
 
   <nav>
-    <button class="tab-button active" onclick="showTab('disponiveis')">Desenhos Disponíveis</button>
-    <button class="tab-button" onclick="showTab('feitas')">Tatuagens Feitas</button>
-    <button class="tab-button" onclick="showTab('ambiente')">Ambiente Estúdio</button>
-    <button class="tab-button" onclick="showTab('contato')">Contato</button>
+    <button class="tab-button active" onclick="showTab('disponiveis', event)">Desenhos Disponíveis</button>
+    <button class="tab-button" onclick="showTab('feitas', event)">Tatuagens Feitas</button>
+    <button class="tab-button" onclick="showTab('ambiente', event)">Ambiente Estúdio</button>
+    <button class="tab-button" onclick="showTab('contato', event)">Contato</button>
   </nav>
 
   <!-- Aba: Desenhos Disponíveis -->
@@ -196,7 +195,6 @@
         <img src="desenho2.jpg" alt="Desenho 2" onclick="openModal(this.src)">
         <p>Andorinha</p>
       </div>
-      <!-- Adicione mais desenhos -->
     </div>
   </div>
 
@@ -205,34 +203,37 @@
     <div class="grid">
       <div class="item">
         <img src="tatuagem1.jpg" alt="Tatuagem feita 1" onclick="openModal(this.src)">
-      
+        <p>Tatuagem feita 1</p>
       </div>
       <div class="item">
         <img src="tatuagem2.jpg" alt="Tatuagem feita 2" onclick="openModal(this.src)">
-        </p>
-              </div>
+        <p>Tatuagem feita 2</p>
+      </div>
       <div class="item">
         <img src="tatuagem3.jpg" alt="Tatuagem feita 3" onclick="openModal(this.src)">
-        
-        </div>
+        <p>Tatuagem feita 3</p>
+      </div>
       <div class="item">
         <img src="tatuagem4.jpg" alt="Tatuagem feita 4" onclick="openModal(this.src)">
-        <p>
+        <p>Tatuagem feita 4</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Aba: Ambiente Estúdio -->
   <div id="ambiente" class="content-section">
     <div class="grid">
       <div class="item">
         <img src="ambiente1.jpg" alt="Ambiente 1" onclick="openModal(this.src)">
-        <p></p>
+        <p>Ambiente 1</p>
       </div>
       <div class="item">
         <img src="ambiente2.jpg" alt="Ambiente 2" onclick="openModal(this.src)">
-                <p></p>
+        <p>Ambiente 2</p>
       </div>
       <div class="item">
         <img src="ambiente3.jpg" alt="Ambiente 3" onclick="openModal(this.src)">
-        <p></p>
+        <p>Ambiente 3</p>
       </div>
     </div>
   </div>
@@ -253,7 +254,7 @@
   </div>
 
   <script>
-    function showTab(id) {
+    function showTab(id, event) {
       const sections = document.querySelectorAll('.content-section');
       const buttons = document.querySelectorAll('.tab-button');
 
@@ -275,4 +276,4 @@
   </script>
 
 </body>
-      </html>
+</html>
